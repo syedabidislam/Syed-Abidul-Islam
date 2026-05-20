@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Abidul Islam | Cyber Security Expert & Digital Marketer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --slate-950: #020617;
+            --cyan-400: #22d3ee;
+            --blue-500: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--slate-950);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .font-mono { font-family: 'Fira Code', monospace; }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+        }
+
+        .neon-border {
+            border: 1px solid var(--cyan-400);
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+        }
+
+        .dynamic-logo {
+            background: linear-gradient(90deg, #22d3ee, #3b82f6, #22d3ee);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(34, 211, 238, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        .radial-glow {
+            background: radial-gradient(circle at center, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--cyan-400);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        #menu-overlay {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] radial-glow"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] radial-glow"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#22d3ee 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center glass border-b border-white/5">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded bg-cyan-400 flex items-center justify-center font-bold text-slate-950">S</div>
+            <span class="dynamic-logo text-xl font-bold tracking-tighter">SYED ABIDUL ISLAM</span>
+        </div>
+
+        <button onclick="toggleMenu()" class="p-2 hover:bg-white/10 rounded-full transition-colors text-cyan-400">
+            <i data-lucide="more-vertical"></i>
+        </button>
+    </header>
+
+    <div id="menu-overlay" class="fixed inset-0 z-[60] glass invisible opacity-0 flex flex-col items-center justify-center space-y-8">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-cyan-400">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#hero" onclick="toggleMenu()" class="text-3xl font-bold hover:text-cyan-400 transition-colors">HOME</a>
+        <a href="#about" onclick="toggleMenu()" class="text-3xl font-bold hover:text-cyan-400 transition-colors">EXPERIENCE</a>
+        <a href="#arsenal" onclick="toggleMenu()" class="text-3xl font-bold hover:text-cyan-400 transition-colors">SECURITY ARSENAL</a>
+        <a href="#contact" onclick="toggleMenu()" class="text-3xl font-bold hover:text-cyan-400 transition-colors">CONTACT</a>
+    </div>
+
+    <main class="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <section id="hero" class="min-h-[80vh] flex flex-col lg:flex-row items-center gap-12 py-12">
+            <div class="flex-1 space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-sm font-mono">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>ELITE OFFENSIVE SECURITY & MARKETING</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Securing Assets, <br>
+                    <span class="text-cyan-400">Scaling Brands.</span>
+                </h1>
+                <p class="text-slate-400 text-lg max-w-xl">
+                    2 years of battle-tested experience in Cybersecurity Research and Digital Marketing. 
+                    I've protected 400+ cyber infrastructures and boosted 300+ digital platforms.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-4 bg-cyan-400 text-slate-950 font-bold rounded-lg hover:bg-cyan-300 transition-all hover:scale-105">Initialize Protocol</a>
+                    <a href="#arsenal" class="px-8 py-4 border border-white/20 rounded-lg font-bold hover:bg-white/5 transition-all">View Arsenal</a>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full max-w-2xl">
+                <div class="rounded-xl overflow-hidden glass border border-white/10 shadow-2xl relative">
+                    <div class="scanline"></div>
+                    <div class="bg-slate-900/80 px-4 py-2 border-b border-white/10 flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                        </div>
+                        <div class="text-xs font-mono text-slate-500 uppercase tracking-widest">Syed_Terminal_v2.0</div>
+                    </div>
+                    <div id="terminal-content" class="p-6 font-mono text-sm h-[300px] overflow-y-auto space-y-1">
+                        <div class="text-cyan-400">root@syed-abidul-islam:~$ ./start_scan.sh</div>
+                        <div class="text-slate-500">[SYSTEM] Initializing offensive security modules...</div>
+                        <!-- Content will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 rounded-2xl glass border border-white/5 text-center group hover:border-cyan-400/50 transition-all">
+                <div class="text-4xl font-bold text-cyan-400 mb-1">400+</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest">Cyber Clients</div>
+            </div>
+            <div class="p-6 rounded-2xl glass border border-white/5 text-center group hover:border-blue-500/50 transition-all">
+                <div class="text-4xl font-bold text-blue-500 mb-1">300+</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest">Marketing Clients</div>
+            </div>
+            <div class="p-6 rounded-2xl glass border border-white/5 text-center group hover:border-cyan-400/50 transition-all">
+                <div class="text-4xl font-bold text-cyan-400 mb-1">2</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest">Years Experience</div>
+            </div>
+            <div class="p-6 rounded-2xl glass border border-white/5 text-center group hover:border-blue-500/50 transition-all">
+                <div class="text-4xl font-bold text-blue-500 mb-1">∞</div>
+                <div class="text-xs text-slate-500 uppercase tracking-widest">Vigilance</div>
+            </div>
+        </section>
+
+        <section id="arsenal" class="py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Security <span class="text-cyan-400">Arsenal</span></h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Tool Card -->
+                <div class="p-6 rounded-xl glass border border-white/10 flex flex-col items-center hover:neon-border transition-all group">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-sm">Kali Linux</span>
+                </div>
+                <div class="p-6 rounded-xl glass border border-white/10 flex flex-col items-center hover:neon-border transition-all group">
+                    <i data-lucide="terminal" class="w-10 h-10 text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-sm">Metasploit</span>
+                </div>
+                <div class="p-6 rounded-xl glass border border-white/10 flex flex-col items-center hover:neon-border transition-all group">
+                    <i data-lucide="search" class="w-10 h-10 text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-sm">Burp Suite</span>
+                </div>
+                <div class="p-6 rounded-xl glass border border-white/10 flex flex-col items-center hover:neon-border transition-all group">
+                    <i data-lucide="database" class="w-10 h-10 text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-sm">Nmap</span>
+                </div>
+                <div class="p-6 rounded-xl glass border border-white/10 flex flex-col items-center hover:neon-border transition-all group">
+                    <i data-lucide="trending-up" class="w-10 h-10 text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-sm">Meta Ads</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24">
+            <div class="relative rounded-3xl overflow-hidden glass p-12 text-center border border-white/10">
+                <div class="absolute top-0 right-0 p-8 text-red-500/20">
+                    <i data-lucide="alert-triangle" class="w-32 h-32"></i>
+                </div>
+                
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Threat Level: <span class="text-red-500 underline underline-offset-8">Critical</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-10 italic">
+                    "Every digital asset without a guardian is just an invitation for breach. Protect your data or scale your brand today."
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <div class="flex flex-col items-center p-4">
+                        <span class="text-xs uppercase tracking-widest text-slate-500 mb-2">Secure Line</span>
+                        <a href="mailto:contact@syedabidulislam.com" class="text-xl font-mono text-cyan-400 hover:underline">contact@syedabidulislam.com</a>
+                    </div>
+                    <div class="hidden md:block w-px h-16 bg-white/10"></div>
+                    <div class="flex flex-col items-center p-4">
+                        <span class="text-xs uppercase tracking-widest text-slate-500 mb-2">Deployment Zone</span>
+                        <span class="text-xl font-mono text-blue-500">Global Coverage</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-sm font-mono">
+        &copy; <span id="year"></span> SYED ABIDUL ISLAM // ENCRYPTION ENABLED // ALL RIGHTS RESERVED
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const overlay = document.getElementById('menu-overlay');
+            if (overlay.classList.contains('invisible')) {
+                overlay.classList.remove('invisible', 'opacity-0');
+            } else {
+                overlay.classList.add('invisible', 'opacity-0');
+            }
+        }
+
+        // Terminal Simulation
+        const terminal = document.getElementById('terminal-content');
+        const logs = [
+            { text: "[*] Scanning subdomains for target.com...", color: "text-slate-400" },
+            { text: "[+] 14 active endpoints discovered.", color: "text-green-500" },
+            { text: "[!] WARNING: CVE-2024-X Detected (CRITICAL)", color: "text-red-500" },
+            { text: "[*] Analyzing marketing conversion funnels...", color: "text-blue-400" },
+            { text: "[+] SEO Optimization: 85% Score achieved", color: "text-green-500" },
+            { text: "[*] Bypassing legacy firewall protocols...", color: "text-slate-400" },
+            { text: "[SYSTEM] Syed Abidul Islam connected.", color: "text-cyan-400" },
+            { text: "[*] 700+ Global clients verified.", color: "text-slate-400" }
+        ];
+
+        let index = 0;
+        function runTerminal() {
+            if (index < logs.length) {
+                const div = document.createElement('div');
+                div.className = logs[index].color;
+                div.textContent = logs[index].text;
+                terminal.appendChild(div);
+                terminal.scrollTop = terminal.scrollHeight;
+                index++;
+            } else {
+                // Reset or keep looping
+                index = 0;
+                terminal.innerHTML = `
+                    <div class="text-cyan-400">root@syed-abidul-islam:~$ ./refresh_status.sh</div>
+                    <div class="text-slate-500">[SYSTEM] Reloading live metrics...</div>
+                `;
+            }
+            setTimeout(runTerminal, Math.random() * 2000 + 500);
+        }
+
+        // Year Update
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        window.onload = () => {
+            runTerminal();
+        };
+    </script>
+</body>
+</html>
